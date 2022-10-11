@@ -16,3 +16,8 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+    return bool(set(a[2]).intersection(b[2]))
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

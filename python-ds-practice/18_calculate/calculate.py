@@ -26,3 +26,26 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    if make_int:
+        if operation == 'add':
+            return f'{message} {int(a+b)}'
+        elif operation == 'subtract':
+            return f'{message} {int(a-b)}'
+        elif operation == 'divide':
+            return f'{message} {int(a/b)}'
+        elif operation == 'multiply':
+            return f'{message} {int(a*b)}'
+    else:
+        if operation == 'add':
+            return f'{message} {(a+b)}'
+        elif operation == 'subtract':
+            return f'{message} {(a-b)}'
+        elif operation == 'divide':
+            return f'{message} {(a/b)}'
+        elif operation == 'multiply':
+            return f'{message} {(a*b)}'
+    return None
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
