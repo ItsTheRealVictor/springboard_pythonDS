@@ -21,3 +21,9 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+    phrase = phrase.replace(' ', '') # get rid of any spaces
+    return phrase.lower() == phrase[::-1].lower()
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
