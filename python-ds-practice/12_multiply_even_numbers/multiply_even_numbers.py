@@ -12,3 +12,14 @@ def multiply_even_numbers(nums):
         >>> multiply_even_numbers([1, 3, 5])
         1
     """
+    result = 1
+    evens = [i for i in nums if i % 2 == 0]
+    for numero in evens:
+        result *= numero
+    if not evens:
+        return 1
+    return result
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

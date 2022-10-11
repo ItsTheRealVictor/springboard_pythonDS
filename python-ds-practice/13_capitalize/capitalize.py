@@ -7,3 +7,8 @@ def capitalize(phrase):
         >>> capitalize('only first word')
         'Only first word'
     """
+    return phrase.title()
+    
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
