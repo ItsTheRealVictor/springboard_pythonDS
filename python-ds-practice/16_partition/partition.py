@@ -1,5 +1,3 @@
-from functools import reduce
-
 def partition(lst, fn):
 
     """Partition lst by predicate.
@@ -22,10 +20,15 @@ def partition(lst, fn):
         >>> partition(["hi", None, 6, "bye"], is_string)
         [['hi', 'bye'], [None, 6]]
     """
-    pass
-    # return reduce(fn, lst)
-def is_even(num):
-    return num % 2 == 0
-list = [1,2,3,4]
-result = reduce(is_even, list)
-print(result)
+    truths = []
+    falsities = []
+    for i in lst:
+        if fn(i):
+            truths.append(i)
+        else:
+            falsities.append(i)
+    return [truths, falsities]
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

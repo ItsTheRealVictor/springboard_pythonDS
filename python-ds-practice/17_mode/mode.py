@@ -1,3 +1,5 @@
+from collections import Counter
+
 def mode(nums):
     """Return most-common number in list.
 
@@ -11,3 +13,19 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    # the slick way
+    # resultMap = dict(Counter(nums))
+    # return resultMap.get(max(resultMap.values()))
+
+    # the long way
+    resultMap = {}
+    for num in nums:
+        if num not in resultMap:
+            resultMap[num] = 1
+        else:
+            resultMap[num] += 1
+    return resultMap.get(max(resultMap.values()))
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
