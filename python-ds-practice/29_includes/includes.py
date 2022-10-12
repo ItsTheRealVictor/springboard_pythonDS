@@ -29,4 +29,14 @@ def includes(collection, sought, start=None):
 
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
-    """
+        """
+
+    # I think the docstring is incorrect, dictionaries have been ordered by default since python 3.7. Does that change this code at all ? I went with the solution code in the meantime. 
+    
+    if isinstance(collection, dict):
+        return sought in collection.values()
+
+    if start is None or isinstance(collection, set):
+        return sought in collection
+
+    return sought in collection[start:]
