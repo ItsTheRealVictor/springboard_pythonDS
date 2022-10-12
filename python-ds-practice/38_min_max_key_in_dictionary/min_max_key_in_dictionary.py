@@ -9,3 +9,14 @@ def min_max_keys(d):
         >>> min_max_keys({"apple": "red", "cherry": "red", "berry": "blue"})
         ('apple', 'cherry')
     """
+    sm = min(d.keys())
+    bg = max(d.keys())
+    return (sm, bg)
+
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+
+    

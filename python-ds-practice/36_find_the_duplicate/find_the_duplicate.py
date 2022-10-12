@@ -13,3 +13,12 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    from collections import Counter
+    valueList = [k for k, v in Counter(nums).items() if v>1]
+    if not valueList:
+        return None
+    return valueList[0]
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
