@@ -24,4 +24,10 @@ def sum_range(nums, start=0, end=None):
         9
     """
     if not end:
-        return (sum)
+        end = len(nums)
+
+    return sum(nums[start:end + 1])
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
